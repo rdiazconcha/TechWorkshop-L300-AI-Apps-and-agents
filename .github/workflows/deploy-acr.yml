@@ -34,7 +34,7 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags: ${{ secrets.ACR_LOGIN_SERVER }}/${{ github.event.repository.name }}:latest,${{ secrets.ACR_LOGIN_SERVER }}/${{ github.event.repository.name }}:${{ github.sha }}
+          tags: ${{ secrets.AZURE_CONTAINER_REGISTRY }}/${{ github.event.repository.name }}:latest,${{ secrets.AZURE_CONTAINER_REGISTRY }}/${{ github.event.repository.name }}:${{ github.sha }}
 
       - name: Remove .env file
         if: always()
