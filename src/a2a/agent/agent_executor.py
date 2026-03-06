@@ -34,6 +34,8 @@ class AgentFrameworkProductManagementExecutor(AgentExecutor):
             event_queue: Event queue for publishing task updates
         """
         query = context.get_user_input()
+        print(f"EXECUTE CALLED: {query}")
+        logger.info(f"[AGENT] New request: '{query}'")
         task = context.current_task
         if not task:
             task = new_task(context.message)
@@ -61,6 +63,7 @@ class AgentFrameworkProductManagementExecutor(AgentExecutor):
                     )
                 )
             elif is_done:
+                logger.info(f"[AGENT] Task complete: '{task.id}'")
                 await event_queue.enqueue_event(
                     TaskArtifactUpdateEvent(
                         append=False,

@@ -20,6 +20,12 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Force agent logger to output via uvicorn's handler
+for name in ("agent", "api"):
+    logging.getLogger(name).setLevel(logging.INFO)
+    logging.getLogger(name).addHandler(logging.StreamHandler())
+
+
 # Global variables for cleanup
 httpx_client: httpx.AsyncClient = None
 a2a_server: A2AServer = None

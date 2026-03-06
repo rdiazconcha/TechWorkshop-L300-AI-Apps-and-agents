@@ -35,9 +35,14 @@ async def send_message(chat_message: ChatMessage):
         
         # Store session
         active_sessions[session_id] = session_id
+
+        logger.info(f"[CHAT] Received: '{chat_message.message}' | session={session_id}")  # ADD
+
         
         # Get response from agent
         response = await product_management_agent.invoke(chat_message.message, session_id)
+
+        logger.info(f"[CHAT] Response ready | complete={response.get('is_task_complete')} | session={session_id}")  # ADD
         
         return ChatResponse(
             response=response.get('content', 'No response available'),
