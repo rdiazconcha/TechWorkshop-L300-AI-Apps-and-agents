@@ -11,7 +11,7 @@ import orjson  # Faster JSON library
 from dotenv import load_dotenv
 from opentelemetry import trace
 import logging
-# from opentelemetry.instrumentation.openai_v2 import OpenAIInstrumentor :)
+# from opentelemetry.instrumentation.openai_v2 import OpenAIInstrumentor :) ;)
 
 # Azure & OpenAI Imports
 from azure.ai.projects import AIProjectClient
