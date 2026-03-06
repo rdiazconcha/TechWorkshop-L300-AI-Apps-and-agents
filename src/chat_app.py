@@ -13,7 +13,7 @@ from opentelemetry import trace
 import logging
 # from opentelemetry.instrumentation.openai_v2 import OpenAIInstrumentor
 
-# Azure & OpenAI Imports
+# Azure & OpenAI Imports :)
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
 from openai import AzureOpenAI
