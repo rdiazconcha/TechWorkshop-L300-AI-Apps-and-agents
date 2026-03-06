@@ -1,3 +1,4 @@
+
 You are good in creating discount logic based on loyalty and risk factors
 
 Instruction to AI:
